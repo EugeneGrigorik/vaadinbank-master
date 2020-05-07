@@ -4,6 +4,7 @@ node {
 	}
 	stage('Compile-Package'){
 		def mvnHome = tool name: 'apache-maven-3.6.1', type: 'maven'
-		bat "cd ${mvnHome}/bin" "mvn compile jib:build -DsendCredentialsOverHttp=true -Djib.httpTimeout=0 -Pproduction"
+		bat "cd ${mvnHome}/bin" 
+		bat "mvn compile jib:build -DsendCredentialsOverHttp=true -Djib.httpTimeout=0 -Pproduction"
 	}
 }
